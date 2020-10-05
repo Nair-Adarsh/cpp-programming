@@ -1,0 +1,33 @@
+//THIS CODE WILL GIVE THE CURRESPONDING FIBONACCI TERM OF THE POSITION THAT THE USER ENTERED.
+//MEMOIZATION IS USED HERE SO THE COMPILING TIME IS LESS, THE CODE WILL RUN FASTER
+//REMEMBER:FIRST POITION OF THE SERIES IS STARTING FROM 0
+#include<iostream>
+using namespace std;
+int arr[1000];
+int fib(int pos)
+{
+	if(pos<=1)
+	{
+		return pos;
+	}
+	if(arr[pos]!=0)
+	{
+		return arr[pos];
+	}
+	else{
+		arr[pos]=fib(pos-1)+fib(pos-2);
+		return arr[pos];
+	}
+}
+int main(){
+	int position;
+	cout<<"Enter the position of Fibonacci number that to be found(position starts from 0)"<<endl;
+	cin>>position;
+	int f=fib(position);
+	cout<<f<<endl;
+	return main();
+}
+
+//WRITTEN BY ADARSH S NAIR
+//05-OCT-2020
+//THANK YOU
