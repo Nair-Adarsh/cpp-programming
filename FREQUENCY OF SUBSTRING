@@ -1,0 +1,36 @@
+//THIS CODE IS TO FIND THE COUNT OF OCCURENCE OF A SUBSTRING IN A PARENT STRING.
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+	string parent;
+	string sub;
+	int count=0;
+	cout<<"parent string"<<endl;
+	cin>>parent;
+	cout<<"substring"<<endl;
+	cin>>sub;
+	int n=parent.length();
+	int m=sub.length();
+	for(int i=0;i<=n-m;i++)
+	{
+		int j;
+		for( j=0;j<m;j++)
+		{
+			if(parent[i+j]!=sub[j])
+			{
+				break;
+			}
+		}
+			if(j==m){
+				count++;
+				j=0;
+			}
+	}
+	cout<<count<<endl;
+	return main();
+}
+
+//ADARSH S NAIR
+//06-OCT-2020
