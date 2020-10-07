@@ -1,0 +1,63 @@
+//THIS PROGRAM IS FOR FIND THE PRESENCE AND FREQUENCY OF A SUBSTRING INSIDE THE PARENT STRING.
+//FUNCTION IS USED.
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+void checking(char ss[100],char subb[100])
+{
+	int len1=strlen(ss);
+	int len2=strlen(subb);
+	int flag=0,count=0;
+	for(int i=0;i<=len1-len2;i++)
+	{
+		for(int j=i;j<i+len2;j++)
+		{
+			flag=1;
+			if(ss[j]!=subb[j-i]){
+				flag=0;
+				break;
+			}
+		}
+		if(flag==1)
+		{
+			break;
+		}
+	}
+	if(flag==1){
+		cout<<"The substring is PRESENT inside the parent string"<<endl;
+		for(int m=0;m<=len1-len2;m++)
+		{
+			int n;
+			for(n=0;n<len2;n++)
+			{
+				if(ss[m+n]!=subb[n])
+				{
+					break;
+				}
+			}
+			if(n==len2)
+			{
+				count++;
+				n=0;
+			}
+		}
+		cout<<"The COUNT of substring inside the parent string is : "<<count<<endl;
+	}
+	else{
+		cout<<"substring is ABSENT inside the parent string"<<endl;
+	}
+}
+int main()
+{
+	char s[100],sub[100];
+	cout<<"Enter the parent string"<<endl;
+	cin>>s;
+	cout<<"Enter the substring"<<endl;
+	cin>>sub;
+	checking(s,sub);
+	return main();
+}
+
+//ADARSH S NAIR
+//07-OCT-2020
