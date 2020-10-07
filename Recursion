@@ -1,0 +1,27 @@
+//HERE THE PROGRAM GIVES THE CURRESEPONDING FIBONACCI TERM OF THE POSITION GIVING AS INPUT;
+//FUNCTION USED.
+
+#include<iostream>
+using namespace std;
+int fib(int n)
+{
+	if(n<=1)
+	{
+		return n;
+	}
+	else{
+		return fib(n-1)+fact(n-2);
+	}
+}
+int main()
+{
+	int fibonacci,n;
+	cout<<"Enter the position"<<endl;
+	cin>>n;
+	fibonacci=fib(n);
+	cout<<fibonacci<<endl;
+	return main();
+}
+
+//ADARSH S NAIR
+//07 OCT 2020
