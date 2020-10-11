@@ -1,0 +1,35 @@
+//THIS PROGRAM IS USED FOR REMOVING A CHARACTER FROM THE GIVEN STRING
+//
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+	char w,s[100];
+	string	 n;
+	int len,position=0;
+	cout<<"enter a string"<<endl;
+	gets(s);
+	len=strlen(s);
+	cout<<"Enter a character to be removed from the string"<<endl;
+	cin>>w;
+	for(int i=0;i<len;i++)
+	{
+		if(w==s[i])
+		{
+			position=i;
+		}
+	}
+	for(int i=0;i<position;i++){
+		n+=s[i];
+	}
+	for(int j=position+1;j<len;j++){
+			n+=s[j];
+	}
+	cout<<n<<endl;
+	return 0;
+}
+
+//ADARSH S NAIR
+//10-OCT-2020
