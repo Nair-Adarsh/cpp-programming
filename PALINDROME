@@ -1,0 +1,39 @@
+//THIS PROGRAM WILL CHECK A WORD OR SENTENCE IS A PALINDROME OR NOT..
+
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+	char s[100];
+	string rev;
+	int flag;
+	cout<<"Enter a word or sentence"<<endl;
+	gets(s);
+	int len=strlen(s);
+	for(int i=len-1;i>=0;i--)
+	{
+		rev+=s[i];	
+	}	
+	for(int i=0;i<len;i++)
+	{
+		if(rev[i]==s[i]||(s[i]-rev[i]==32)||(s[i]-rev[i]==-32))
+		{
+			flag=0;
+		}
+		else{
+			flag=1;
+		}
+	}
+	if(flag==0)
+	{
+		cout<<"The given word or sentence is a Palindrome"<<endl;
+	}
+	else{
+		cout<<"The given word or sentence is not a Palindrome"<<endl;
+	}
+	return main();
+}
+
+//ADARSH S NAIR
+// 11-OCT-2020
