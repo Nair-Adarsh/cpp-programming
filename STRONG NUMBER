@@ -1,0 +1,38 @@
+//TO CHECK A GIVEN NUMBER IS STRONG OR NOT
+//STRONG NUMBER : SUM OF FACTORIAL OF DIGITS OF A NUMEBR SAME AS THE NUMBER
+
+#include<bits/stdc++.h>
+using namespace std;
+int fact(int r){
+	if(r<=1)
+	{
+		return 1;
+	}
+	else{
+		return r*fact(r-1);
+	}
+}
+int main()
+{
+	int num,temp,rem,sum=0;;
+	cout<<"number"<<endl;
+	cin>>num;
+	temp=num;
+	while(num>0)
+	{
+		rem=num%10;
+		sum+=fact(rem);
+		num=num/10;
+	}
+	if(temp==sum)
+	{
+		cout<<"strong"<<endl;
+	}
+	else{
+		cout<<"not"<<endl;
+	}
+	return main();
+}
+
+//ADARSH S NAIR
+23-OCT-2020
