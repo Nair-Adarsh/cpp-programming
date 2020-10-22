@@ -1,0 +1,35 @@
+//THIS CODE WILL GIVE THE BOUNDARYU ELEMENTS OF A GIVEN MATRIX
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int arr[100][100],r,c;
+	cin>>r>>c;
+	for(int i=0;i<r;i++)
+	{
+		for(int j=0;j<c;j++)
+		{
+			cin>>arr[i][j];
+		}
+	}
+	for(int i=0;i<r;i++)
+	{
+		for(int j=0;j<c;j++)
+		{
+			if((i==0)||(j==0)||(i==c-1)||(j==c-1))
+			{
+				cout<<arr[i][j]<<" ";
+			}
+			else{
+				cout<<" ";
+				cout<<" ";
+			}
+		}
+		cout<<endl;
+	}
+	
+	return main();
+}
+//ADARSH S NAIR
+//22-OCT-2020
