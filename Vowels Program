@@ -1,0 +1,60 @@
+//This program will split the given string into substrings and find the substring with most number of vowels
+//String functions and array functions used
+//Seperated substrings shown as a 2-D array
+
+
+
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+	char s[100],sub[100][100];
+	int num,a[100];
+	cout<<"Enter a string"<<endl;
+	cin>>s;
+	int len=strlen(s);
+	cout<<"enter an integer"<<endl;
+	cin>>num;
+	for(int i=0;i<len-num+1;i++)
+	{
+		for(int j=0;j<num;j++)
+		{
+			sub[i][j]=s[i+j];
+		}
+	}
+	for(int i=0;i<len-num+1;i++)
+	{
+		int count=0;
+		for(int j=0;j<num;j++)
+		{
+			cout<<sub[i][j];
+			if(sub[i][j]=='a'||sub[i][j]=='e'||sub[i][j]=='i'||sub[i][j]=='o'||sub[i][j]=='u')
+			{
+				count++;
+			}
+		}
+		cout<<endl;
+		a[i]=count;
+	}
+	int max=a[0],ind=0;
+	for(int i=0;i<len-num+1;i++)
+	{
+		if(max<a[i])
+		{
+			max=a[i];
+			ind=i;
+		}
+	}
+	cout<<"The desired substring is"<<endl;
+	for(int j=0;j<num;j++)
+	{
+		cout<<sub[ind][j];
+	}
+	cout<<endl;
+	return main();
+}
+
+
+//Adarsh S Nair
+//04-NOV-2020
