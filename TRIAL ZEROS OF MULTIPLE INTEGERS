@@ -1,0 +1,39 @@
+//THID CODE WILL GIVE THE COUNT OF TRIAL ZEROS IN FACTORIAL OF MULTIPLE INTEGERS
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	if(t>100000)
+	{
+		return 0;
+	}
+	int arr[100],ar[100];
+	for(int i=0;i<t;i++)
+	{
+		cin>>arr[i];
+		if(arr[i]<1||arr[i]>1000000000){
+			return 0;
+		}
+	}
+	for(int i=0;i<t;i++)
+	{
+		int count=0;
+		for(int j=5;arr[i]/j>=1;j*=5)
+		{
+			count+=arr[i]/j;
+		}
+		ar[i]=count;
+	}
+	for(int i=0;i<t;i++)
+	{
+		cout<<ar[i]<<endl;
+	}
+	return 0;
+}
+
+//ADARSH S NAIR
+//05-NOV-2020
