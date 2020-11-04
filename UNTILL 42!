@@ -1,0 +1,25 @@
+//this code will accept integers and show them untill it senses a 42!
+//found this one from a competition!
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int a[100];
+	
+     for(int  j=0;j<100;j++)
+     {
+     cin>>a[j];
+        if(a[j]==42)
+          return 0;
+        else
+       cout<<a[j]<<endl;
+     }
+}
+
+
+//ADARSH S NAIR
+
+//05-NOV-2020
