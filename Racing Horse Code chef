@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	if(t<1||t>10)
+	{
+		return 0;
+	}
+
+	while(t--){
+	int n;
+	cin>>n;
+	if(n<2||n>5000)
+	{
+		return 0;
+	}
+	int diff,count=0;
+	int ar[5000],a[5000];
+	for(int i=0;i<n;i++)
+	{
+		cin>>ar[i];
+		if(ar[i]<1||ar[i]>1000000000){
+			return 0;
+		}
+	}
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			diff=ar[j]-ar[i];
+			if(diff>0)
+			{
+				a[count]=diff;
+				count++;
+			}
+		}
+	}
+	int min=a[0];
+	for(int i=0;i<count;i++)
+	{
+		if(min>a[i])
+		{
+			min=a[i];
+		}
+	}
+	cout<<min<<endl;
+}
+	return 0;
+}
