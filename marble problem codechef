@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+double factrl(int m)
+{
+	
+	if(m<=1)
+	{
+		return 1;
+	}
+	else{
+		return ceil(m*factrl(m-1));
+	}
+}
+int main()
+{
+    int t;
+    cin>>t;
+    if(t>100)
+    {
+        return 0;
+    }
+    while(t--){
+        
+    
+		int n,k,r=0,res=0;
+		cin>>n>>k;
+		if(k<1&&n<k&&n>1000000)
+		{
+			return 0;
+		}
+		double a=factrl(n-1);
+		double b=factrl(k-1);
+		r=(n-1)-(k-1);
+		double c=factrl(r);
+		res=ceil(a/(b*c));
+		cout<<res<<endl;
+    }
+	return 0;
+}
