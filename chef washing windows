@@ -1,0 +1,80 @@
+/*
+There is a building with N floors (numbered 1 through N from bottom to top); on each floor, there are M windows 
+(numbered 1 through M from left to right). Let's denote the j-th window on the i-th floor by (i,j).
+
+All windows in the building need to be cleaned one by one in a specific order. You are given 
+this order as a matrix A with N rows and M columns; for each valid i and j, the window (i,j) must be cleaned on the AN−i+1,j-th turn.
+
+Whenever we clean a window (i,j), it becomes clean, but the dirty water used for 
+cleaning it flows down to windows (i−1,j−1), (i−1,j) and (i−1,j+1) (more precisely, to all of these windows which exist), 
+so these windows become dirty again. Then, the water flows further down, so the same applies for other windows below: 
+whenever a window (i,j) becomes dirty, windows (i−1,j−1), (i−1,j) and (i−1,j+1) become dirty as well. For example, 
+cleaning a window (5,3) will make the window (3,2) dirty. The next window is cleaned only after water flows down completely. 
+Note that each window is cleaned only once and there may be dirty windows at the end.
+
+For each window, determine whether it will be clean after the cleaning process ends.
+*/
+
+#include <bits/stdc++.h>
+#include <vector>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define rrep(i,b,a) for(int i=b;i>=a;i--)
+#define fori(a) for(auto i : a )
+#define all(a) begin(a), end(a)
+#define set(a,b) memset(a,b,sizeof(a))
+#define pi 3.14159
+#define ll long long 
+#define ull unsigned long long
+#define pb push_back
+#define PF push_front //deque
+#define mp make_pair
+#define pq priority_queue
+#define mod 1000000007
+#define f first
+#define s second
+#define pii pair< int, int >
+#define tc int t; cin >> t; while(t--)
+using namespace std;
+void optimizeIO(){
+    ios_base::sync_with_stdio(false); 
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+int max(int x,int y){
+    return x>y?x:y;
+}
+int main(){
+    optimizeIO();
+    tc{
+        int n,m;
+        cin>>n>>m;
+        if(n>25||m>25)
+        {
+            return 0;
+        }
+        int v[n][m];
+        int dp[n][m];
+        rep(i,0,n){
+            rep(j,0,m){
+                cin>>v[i][j];
+            }
+        }
+        rep(j,0,m) dp[0][j]= v[0][j];
+        rep(i,1,n){
+            rep(j,0,m){
+                if(j==0 && j+1<m) dp[i][j]=max(max(dp[i-1][j],dp[i-1][j+1]),max(v[i-1][j],v[i-1][j+1]));
+                else if(j==m-1 && j-1>=0) dp[i][j]=max(max(dp[i-1][j],dp[i-1][j-1]),max(v[i-1][j],v[i-1][j-1]));
+                else if(0<j && j<m) dp[i][j]=max(max(max(dp[i-1][j],dp[i-1][j-1]),dp[i-1][j+1]),max(max(v[i-1][j],v[i-1][j-1]),v[i-1][j+1]));
+                else dp[i][j]=v[i-1][j];
+            }
+        }
+        rep(i,0,n){
+            rep(j,0,m){
+                if(v[i][j]>=dp[i][j]) cout<<"1";
+                else cout<<"0";
+            }
+            cout<<endl;
+        }
+    }
+    return 0;
+}
