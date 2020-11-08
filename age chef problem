@@ -1,0 +1,84 @@
+/*
+Chef's planet is called Javad. A year on Javad has N months numbered 1 through N. For each valid i, the i-th month has ai days numbered 1 through ai.
+
+On Javad, years that are divisible by 4 are leap years - the last month of each leap year is one day longer (it has aN+1 days).
+
+You are given Chef's birth date and the current date. Find the age of Chef in days, i.e. the number of days between Chef's birth date and the current date inclusive.
+
+
+Example Input
+4
+5
+1 2 3 4 5
+2 1 1
+3 5 1
+2
+3 3
+1 1 1
+2 2 2
+2
+1 1
+3 1 1
+3 2 1
+5
+1 4 3 4 6
+3 5 6
+10 1 1
+
+
+Example Output
+26
+11
+2
+112
+
+
+
+*/
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+if(t<1||t>100)
+{
+    return 0;
+}
+while (t--){
+int n,i;
+cin>>n;
+int a[n],b[3],c[3];
+for (i=0;i<n;i++)
+        cin>>a[i];
+cin>>b[0]>>b[1]>>b[2];
+cin>>c[0]>>c[1]>>c[2];
+long long int db=0,dc=0;
+for (i=0;i<b[1]-1;i++)
+        db=db+a[i];
+db=db+b[2];
+int x=(b[0]-1)/4;
+db=db+x;
+for (i=0;i<c[1]-1;i++)
+        dc=dc+a[i];
+dc=dc+c[2]+((c[0]-1)/4);
+long long int d=0,re;
+for (i=0;i<n;i++)
+        d=d+a[i];
+if (db>dc){
+        dc=dc+d;
+        c[0]--;
+}
+re=(c[0]-b[0])*d+(dc-db)+1;
+
+cout<<re<<endl;
+}
+return 0;
+}
