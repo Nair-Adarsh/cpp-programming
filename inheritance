@@ -1,0 +1,26 @@
+//inheritance basic
+
+#include<bits/stdc++.h>
+using namespace std;
+class mine{
+	public:
+		int a,b,sum=0;
+		void s(){
+			sum=a+b;
+		}
+};
+class my:public mine{
+	public:
+		string x="hi all";
+};
+int main()
+{
+	my m;
+	cin>>m.a>>m.b;
+	m.s();
+	cout<<m.sum<<"***"<<m.x<<endl;
+	return main();
+}
+
+//Adarsh S Nair
+//17-Dec-2020
