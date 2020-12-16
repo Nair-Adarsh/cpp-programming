@@ -1,0 +1,31 @@
+//Encapsulation provides better security to our data
+//Simple addition program which shows encapsulation in c++
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class mine{
+	private:
+		int sum;
+	public:
+		int a, b;
+		int setsum(int s){
+			s=a+b;
+			sum=s;
+		}	
+		int getsum(){
+			return sum;
+		}
+};
+int main()
+{
+	mine m;
+	cout<<"Enter two numbers"<<endl;
+	cin>>m.a>>m.b;
+	m.setsum(0);
+	cout<<m.getsum()<<endl;
+	return main();
+}
+
+//Adarsh S Nair
+//16-Dec-2020
