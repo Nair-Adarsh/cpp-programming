@@ -1,0 +1,26 @@
+//introduction to inline functions
+
+
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+class hi{
+	public:
+		void hlo();
+};
+inline void hi ::hlo()
+{
+	string s;
+	cin>>s;
+	cout<<s;
+}
+int main()
+{
+	
+	hi h;
+	h.hlo();
+	return main();
+}
+
+//Adarsh S Nair
+//20-Dec-2020
