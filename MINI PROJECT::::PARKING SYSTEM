@@ -1,0 +1,112 @@
+//a simple vehicle parking management system 
+
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+//declaration of user defined function signatures.
+
+int menu();
+void bus();
+void cycle();
+void riksha();
+void showdetails();
+void Delete();
+
+//declaration of global variables
+
+int nob=0,noc=0,nor=0,amount=0,count=0;
+int main()
+{
+	int choice;
+	do{
+		switch(menu())
+		{
+			case 1:
+				bus();
+				break;
+			case 2:
+				cycle();
+				break;
+			case 3:
+				riksha();
+				break;
+			case 4:
+				showdetails();
+				break;	
+			case 5:
+				Delete();
+				break;
+			default:
+				cout<<"Wrong choice,Select another"<<endl;				
+		}
+		cout<<"To add more vehicles press 0; else any number to exist"<<endl;
+		cout<<"Enter your choice"<<endl;
+		cin>>choice;
+		getch();
+	}
+	while(choice==0);
+	cout<<"Thank you"<<endl;
+}
+
+void bus()
+{
+	nob++;
+	amount+=100;
+	count++;
+}
+
+void riksha()
+{
+	nor++;
+	amount+=50;
+	count++;
+}
+
+void cycle()
+{
+	noc++;
+	amount+=70;
+	count++;
+}
+
+int menu()
+{
+	int ch;
+	cout<<"****************************"<<endl;
+	cout<<"Press 1 for bus : Charge 100 INR"<<endl;
+	cout<<"Press 2 for cycle : Charge 70 INR"<<endl;
+	cout<<"Press 3 for bus : Charge 50 INR"<<endl;
+	cout<<"Press 4 for see the record : "<<endl;
+	cout<<"Press 5 delete the record"<<endl;
+	cout<<"Press 6 for exit"<<endl;
+	cout<<"******************************"<<endl;
+	cout<<"Please enter your choice"<<endl;
+	cin>>ch;
+	return ch;
+}
+
+void showdetails()
+{
+	cout<<"******************************"<<endl;
+	cout<<"total number of buses::"<<nob<<endl;
+	cout<<"total number of rikshas::"<<nor<<endl;
+	cout<<"total number of cycles::"<<noc<<endl;
+	cout<<"total number of vehicles::"<<count<<endl;
+	cout<<"Toltal amount collected::"<<amount<<endl;
+	cout<<"*******************************"<<endl;	
+}
+
+void Delete()
+{
+	nob=0;
+	noc=0;
+	nor=0;
+	amount=0;
+	count=0;
+}
+
+
+//ADARSH S NAIR
+//30-DEC-2020
