@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	cout<<"Enter the no.of elements"<<endl;
+	cin>>n;
+	int arr[n];
+	cout<<"Enter the elements"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	int min=arr[0];
+	int pos=0;
+	int temp=0;
+	for(int i=0;i<n;i++)
+	{
+		min=arr[i];
+		pos=i;
+		for(int j=i+1;j<n;j++)
+		{
+			if(min>arr[j])
+			{
+				min=arr[j];
+				pos=j;
+			}
+		}
+		temp=arr[i];
+		arr[i]=arr[pos];
+		arr[pos]=temp;
+	}
+	cout<<"The list in ascending order is "<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+	char check;
+	cout<<"Do you want to perform operation again? y/n"<<endl;
+	cin>>check;
+	if(check=='y')
+	{
+		return main();
+	}
+	else{
+		cout<<"Thank you";
+		return 0;
+	}
+}
